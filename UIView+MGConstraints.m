@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 busuu. All rights reserved.
 //
 
-#import "UIView+Constraints.h"
+#import "UIView+MGConstraints.h"
 #import <objc/runtime.h>
 
 static void const *kBSUConstraintsDictionaryKey = "kBSUConstraintsDictionaryKey";
