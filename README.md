@@ -10,6 +10,33 @@ If your code doesn't use ARC you can [mark this source with the compiler flag](h
 
 ## Example Usage
 
+Suppose to have a variable constraints that should radically change for instance when the user rotates the device:
+
+```objc
+NSArray *viewConstraints =
+[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-exampleView-|" options:0 metrics:metrics views:views];
+```
+
+as we want to replace this constraint, but also keeping our code clean, first of all when we declare the constraint we store it in a dictionary using the following code:
+
+```objc
+static NSString * const kMGHorizontalViewConstraints = @"kMGHorizontalViewConstraints";
+
+NSArray *viewConstraints =
+[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-exampleView-|" options:0 metrics:metrics views:views];
+
+[view addAndStoreConstraints:viewConstraints forKey:kMGHorizontalViewConstraints];
+```
+
+Then, at the moment of the rotation:
+
+```objc
+NSArray *viewConstraints =
+[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-exampleView-10-newView-50-|" options:0 metrics:metrics views:views];
+
+[view replaceConstraintsForKey:kMGHorizontalViewConstraints withConstraints:viewConstraints];
+```
+
 ## Contact
 
 Matteo Gobbi
