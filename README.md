@@ -37,6 +37,8 @@ NSArray *viewConstraints =
 [view replaceConstraintsForKey:kMGHorizontalViewConstraints withConstraints:viewConstraints];
 ```
 
+This is just an example of the usage. For further methods please check the (simple) header file.
+
 ## Contact
 
 Matteo Gobbi
