@@ -42,24 +42,16 @@ static void const *kBSUConstraintsDictionaryKey = "kBSUConstraintsDictionaryKey"
 
 - (void)addAndStoreConstraint:(NSLayoutConstraint *)constraint forKey:(id<NSCopying>)key
 {
-    NSParameterAssert([constraint isKindOfClass:[NSLayoutConstraint class]]);
-    NSParameterAssert(key != nil);
-    
-    NSAssert([self.mg_constraintsDictionary.allKeys containsObject:key] == NO, @"You can't store a constraint with the same key of another already existing. To replace a constraint use please the method replaceConstraintForKey:withConstraint:");
+    [self storeConstraint:constraint forKey:key];
     
     [self addConstraint:constraint];
-    [self.mg_constraintsDictionary setObject:constraint forKey:key];
 }
 
 - (void)addAndStoreConstraints:(NSArray *)constraints forKey:(id<NSCopying>)key
 {
-    NSParameterAssert([constraints isKindOfClass:[NSArray class]]);
-    NSParameterAssert(key != nil);
-    
-    NSAssert([self.mg_constraintsDictionary.allKeys containsObject:key] == NO, @"You can't store a constraints with the same key of another already existing. To replace a constraint use please the method replaceConstraintForKey:withConstraint:");
+    [self storeConstraints:constraints forKey:key];
     
     [self addConstraints:constraints];
-    [self.mg_constraintsDictionary setObject:constraints forKey:key];
 }
 
 - (void)storeConstraint:(NSLayoutConstraint *)constraint forKey:(id<NSCopying>)key
