@@ -10,7 +10,7 @@ If your code doesn't use ARC you can [mark this source with the compiler flag](h
 
 ## Example Usage
 
-Suppose to have a variable constraints, which should radically change (for instance when the user rotates the device). The default state would be this:
+Let's suppose to have a variable constraint, which should radically change (for instance when the user rotates the device). The default state would be this:
 
 ```objc
 NSArray *viewConstraints =
