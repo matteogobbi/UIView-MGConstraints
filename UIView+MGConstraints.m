@@ -33,7 +33,7 @@ static void const *kBSUConstraintsDictionaryKey = "kBSUConstraintsDictionaryKey"
     return obj;
 }
 
-- (void)setmg_constraintsDictionary:(NSMutableDictionary *)mg_constraintsDictionary
+- (void)setMg_constraintsDictionary:(NSMutableDictionary *)mg_constraintsDictionary
 {
     objc_setAssociatedObject(self, kBSUConstraintsDictionaryKey, mg_constraintsDictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
